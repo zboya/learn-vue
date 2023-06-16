@@ -1,32 +1,20 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="login-container">
+    <el-input v-model="input" placeholder="Please input" clearable />
+    <el-input v-model="input" type="password" placeholder="Please input password" show-password />
   </div>
-  <HelloWorld msg="boya test " />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
+<script lang="ts" setup>
+import { ref } from 'vue'
+const input = ref('')
+</script>
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<style >
+.login-container {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background-color: #2d3a4b;
 }
 </style>
