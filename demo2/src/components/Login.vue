@@ -361,5 +361,39 @@ export default {
 </script>
 
 
+<style lang="scss" scoped>
+#login {
+  height: 100vh;
+  background-color: #344a5f;
+}
 
-<style></style>
+.form-wrap {
+  width: 320px;
+  padding-top: 100px;
+  margin: auto;
+}
+
+.menu-tab {
+  text-align: center;
+
+  li {
+    display: inline-block;
+    padding: 10px 24px;
+    margin: 0 10px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.current {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.form-label {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+}
+</style>
