@@ -1,109 +1,83 @@
-<!-- <template> -->
-  <!-- <div class="login_input">
-    <el-input style="line-height: 50px;" v-model="inputUsername" placeholder="Please input username" clearable />
-  </div>
-  <div class="login_input">
-    <el-input v-model="inputPwd" type="password" placeholder="Please input password" show-password />
-  </div> -->
-
-  <!-- <div style="height: 50px; display: flex; justify-content: center; align-items: center;">
-    <el-input v-model="inputUsername" placeholder="请输入内容" style="line-height: 50px;"></el-input>
-  </div> -->
-
-  <!-- </template>
-
-<script lang="ts" setup>
-import { ref } from 'vue'
-const inputUsername = ref('')
-// const inputPwd = ref('')
-</script>
-
-<style >
-#login_input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-}
-</style> -->
-
 <template>
-  <el-row>
-    <el-col :span="24">
-      <div class="grid-content ep-bg-purple-dark" />
-    </el-col>
-  </el-row>
-  <el-row>
-    <el-col :span="12">
-      <div class="grid-content ep-bg-purple" />
-    </el-col>
-    <el-col :span="12">
-      <div class="grid-content ep-bg-purple-light" />
-    </el-col>
-  </el-row>
-  <el-row>
-    <el-col :span="8">
-      <div class="grid-content ep-bg-purple" />
-    </el-col>
-    <el-col :span="8">
-      <div class="grid-content ep-bg-purple-light" />
-    </el-col>
-    <el-col :span="8">
-      <div class="grid-content ep-bg-purple" />
-    </el-col>
-  </el-row>
-  <el-row>
-    <el-col :span="6">
-      <div class="grid-content ep-bg-purple" />
-    </el-col>
-    <el-col :span="6">
-      <div class="grid-content ep-bg-purple-light" />
-    </el-col>
-    <el-col :span="6">
-      <div class="grid-content ep-bg-purple" />
-    </el-col>
-    <el-col :span="6">
-      <div class="grid-content ep-bg-purple-light" />
-    </el-col>
-  </el-row>
-  <el-row>
-    <el-col :span="4">
-      <div class="grid-content ep-bg-purple" />
-    </el-col>
-    <el-col :span="4">
-      <div class="grid-content ep-bg-purple-light" />
-    </el-col>
-    <el-col :span="4">
-      <div class="grid-content ep-bg-purple" />
-    </el-col>
-    <el-col :span="4">
-      <div class="grid-content ep-bg-purple-light" />
-    </el-col>
-    <el-col :span="4">
-      <div class="grid-content ep-bg-purple" />
-    </el-col>
-    <el-col :span="4">
-      <div class="grid-content ep-bg-purple-light" />
-    </el-col>
-  </el-row>
+  <div class="login-container">
+    <el-card class="login-card">
+      <h1 class="title">登录</h1>
+      <el-form class="form" :model="form" :rules="rules">
+        <el-form-item label="用户名" prop="username">
+          <el-input v-model="form.username"></el-input>
+        </el-form-item>
+        <el-form-item label="密码" prop="password">
+          <el-input type="password" v-model="form.password"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button class="submit-button" type="primary" @click="handleSubmit">登录</el-button>
+        </el-form-item>
+      </el-form>
+    </el-card>
+  </div>
 </template>
 
-<style lang="scss" >
-.el-row {
-  margin-bottom: 20px;
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
+// import { ElForm, ElFormItem, ElInput, ElButton, ElCard } from 'element-plus'
+
+export default defineComponent({
+  name: 'Login',
+  // components: {
+  //   ElForm,
+  //   ElFormItem,
+  //   ElInput,
+  //   ElButton,
+  //   ElCard
+  // },
+  setup() {
+    const form = ref({
+      username: '',
+      password: ''
+    })
+
+    const rules = ref({
+      username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+      password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+    })
+
+    const handleSubmit = () => {
+      console.log('form:', form.value)
+    }
+
+    return {
+      form,
+      rules,
+      handleSubmit
+    }
+  }
+})
+</script>
+
+<style scoped>
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.el-row:last-child {
-  margin-bottom: 0;
+.login-card {
+  width: 400px;
 }
 
-.el-col {
-  color: red;
-  border-radius: 4px;
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
+.form {
+  margin-top: 2rem;
+}
+
+.submit-button {
+  margin-top: 1rem;
+  width: 100%;
 }
 </style>
