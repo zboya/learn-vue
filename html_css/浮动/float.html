@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .leftfix {
+            float: left;
+        }
+
+        .rightfix {
+            float: right;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .containter {
+            width: 960px;
+            /* height: 500px; */
+            /* background-color: gray; */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .header {}
+
+        .logo,
+        .banner2 {
+            width: 200px;
+        }
+
+        .banner1 {
+            width: 540px;
+            margin: 0 10px;
+        }
+
+
+        .logo,
+        .banner1,
+        .banner2 {
+            height: 80px;
+            line-height: 80px;
+            background-color: #ccc;
+        }
+
+        .menu {
+            width: 960px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #ccc;
+            margin-top: 10px;
+        }
+
+        .item1,
+        .item2 {
+            width: 368px;
+            height: 200px;
+            border: 1px black solid;
+            margin-top: 10px;
+            line-height: 200px;
+        }
+
+        .item2 {
+            margin-left: 10px;
+        }
+
+        .item3,
+        .item4,
+        .item5,
+        .item6 {
+            width: 178px;
+            height: 200px;
+            border: 1px black solid;
+            margin-top: 10px;
+            margin-right: 10px;
+            line-height: 200px;
+        }
+
+        .left {
+            width: 760px;
+        }
+
+        .item7,
+        .item8,
+        .item9 {
+            width: 200px;
+            height: 130px;
+            border: 1px black solid;
+            line-height: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containter">
+        <!-- header -->
+        <div class="header clearfix">
+            <div class="logo leftfix">logo</div>
+            <div class="banner1 leftfix">banner1</div>
+            <div class="banner2 leftfix">banner2</div>
+        </div>
+        <!-- menu -->
+        <div class="menu">菜单</div>
+        <!-- content -->
+        <div class="content clearfix">
+            <!-- left -->
+            <div class="left leftfix">
+                <div class="top clearfix">
+                    <div class="item1 leftfix">
+                        栏目1
+                    </div>
+                    <div class="item2 leftfix">
+                        栏目2
+                    </div>
+                </div>
+                <div class="bottom clearfix">
+                    <div class="item3 leftfix"> 栏目3</div>
+                    <div class="item4 leftfix"> 栏目4</div>
+                    <div class="item5 leftfix"> 栏目5</div>
+                    <div class="item6 leftfix"> 栏目6</div>
+                </div>
+            </div>
+            <!-- right -->
+            <div class="right clearfix">
+                <div class="item7 rightfix"> 栏目7</div>
+                <div class="item8 rightfix"> 栏目8</div>
+                <div class="item9 rightfix"> 栏目9</div>
+            </div>
+        </div>
+        <!-- foot -->
+    </div>
+</body>
+
+</html>
