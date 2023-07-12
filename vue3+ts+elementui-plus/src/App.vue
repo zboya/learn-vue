@@ -25,13 +25,4 @@ import {
   Edit,
   Plus,
 } from '@element-plus/icons-vue'
-
-import { defineComponent } from 'vue'
-import SvgIcon from './components/SvgIcon.vue'
-
-defineComponent({
-  name: 'App',
-  components: { SvgIcon },
-})
-
 </script>

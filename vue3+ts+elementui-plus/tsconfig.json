@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "types": [
-      "element-plus/global",
-      "vite-plugin-svg-icons/client"
-    ],
+    "types": [],
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
